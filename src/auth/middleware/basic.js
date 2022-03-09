@@ -19,7 +19,7 @@ module.exports = async (req, res, next) => {
       req.user = validUser;
       next();
     } catch (e) {
-      res.status(403).send(`invalid username or password`);
+      res.status(403).send(`invalid username or password ${e}`);
     }
   } else {
     next("not auth");

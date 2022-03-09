@@ -24,9 +24,10 @@ const UsersModel = (sequelize, DataTypes) => {
   Users.authenticate = async function (username, password) {
     try {
       const user = await this.findOne({ where: { username: username } });
-      // console.log(password);
+      console.log(password);
+      console.log(user.password)
       const valid = await bcrypt.compare(password, user.password); //true or false
-      // console.log("22", valid);
+      console.log("22", valid);
       // console.log(user.password)
       if (valid) {
         let token = jwt.sign(
