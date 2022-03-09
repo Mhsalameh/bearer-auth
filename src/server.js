@@ -3,11 +3,12 @@ const express = require('express');
 const router = require('./auth/router.js')
 const serverError=require('./middleware/500.js')
 const notFound = require('./middleware/404.js')
+const cors = require('cors')
 const app = express();
 
 app.use(express.json());
 app.use(router);
-
+app.use(cors())
 app.get('/',homeHandler)
 
 function homeHandler(req,res){
