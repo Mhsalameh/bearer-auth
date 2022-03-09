@@ -9,7 +9,7 @@ const { db } = require('../src/models/index.js');
 const mockRequest = supertest(server);
 
 let users = {
-  admin: { username: 'admin', password: 'password' },
+  admin: { username: 'admin-router', password: 'password' },
   editor: { username: 'editor', password: 'password' },
   user: { username: 'user', password: 'password' },
 };
