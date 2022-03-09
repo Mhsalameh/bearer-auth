@@ -18,5 +18,7 @@ module.exports = async (req, res, next) => {
     } catch (e) {
       res.status(403).send("invalid user");
     }
+  }else{
+    next('token is not available!')
   }
 };
